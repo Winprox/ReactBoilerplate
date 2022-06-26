@@ -1,0 +1,67 @@
+@import './../../utils/theme.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  label {
+    margin-bottom: 0.25rem;
+    font-size: $textSmall;
+    user-select: none;
+    cursor: default;
+  }
+
+  button {
+    display: flex;
+    align-items: flex-start;
+    font-size: $textLabel;
+    outline: none;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+  }
+
+  input {
+    padding: 0 0.3rem;
+    border-style: solid;
+    border-width: 0.075rem;
+    border-radius: 12px;
+    border-color: $controlStroke;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+
+    &:disabled {
+      background: $controlDisabled;
+      cursor: not-allowed;
+    }
+  }
+
+  .inputSearchButton {
+    border-radius: 12px 0 0 12px;
+  }
+
+  .inputInvalid {
+    background: $controlBackgroundError;
+  }
+
+  .searchButton {
+    transform: translateX(-1px);
+    border-radius: 0 12px 12px 0;
+    font-size: $textLabel;
+    padding: 0.2rem 0.75rem 0;
+  }
+
+  .invalidMessage {
+    margin-top: 0.25rem;
+    font-size: $textLabel;
+    color: $textRed;
+    user-select: none;
+    cursor: default;
+  }
+}

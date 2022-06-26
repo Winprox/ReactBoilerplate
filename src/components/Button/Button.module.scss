@@ -1,0 +1,92 @@
+@import './../../utils/theme.scss';
+
+.general {
+  user-select: none;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.button {
+  color: $background;
+  background: $primary;
+  border-color: $primary;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 12px;
+  padding: 0.25rem 0.75rem;
+
+  &:hover {
+    border-color: $controlPrimaryHovered;
+    background: $controlPrimaryHovered;
+  }
+
+  &:disabled {
+    border-color: $controlDisabledDark;
+    background: $controlDisabledDark;
+  }
+}
+
+.altButton {
+  color: $primary;
+  background: $background;
+  border-color: $primary;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 12px;
+  padding: 0.25rem 0.75rem;
+
+  &:hover {
+    background: $controlBackground;
+  }
+
+  &:disabled {
+    color: $controlDisabledDark;
+    background: $background;
+    border-color: $controlDisabledDark;
+  }
+}
+
+.textButton {
+  padding: 0;
+  margin: 0;
+  color: $primaryDark;
+  background: transparent;
+  border: none;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &:disabled {
+    color: $textGrey;
+
+    &:hover {
+      color: $textGrey;
+    }
+  }
+}
+
+.iconButton {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  margin: 0;
+  border-radius: 90px;
+  color: $background;
+  background: $primary;
+  border: none;
+  line-height: 0rem;
+  font-size: 0.75rem;
+  box-shadow: 0 0 1rem $controlShadow;
+
+  &:hover {
+    background: $controlPrimaryHovered;
+  }
+
+  &:disabled {
+    background: $controlDisabled;
+  }
+}
