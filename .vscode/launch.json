@@ -5,7 +5,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "Run",
-      "url": "http://localhost:5173/dev/",
+      "url": "http://localhost:5173/",
       "webRoot": "${workspaceFolder}/src"
     }
   ]
