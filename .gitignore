@@ -2,5 +2,4 @@ dist
 node_modules
 package-lock.json
 yarn.lock
-src/assets/public/roads
 .DS_Store
