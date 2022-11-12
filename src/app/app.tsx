@@ -1,7 +1,19 @@
 import { createRoot } from 'react-dom/client';
-import { Main } from '../screens/Main';
 import './normalize.css';
 import './app.scss';
 
-// disableReactDevTools();
-createRoot(document.getElementById('app')!).render(<Main />);
+createRoot(document.getElementById('app')!).render(
+  <div
+    style={{
+      width: '100vw',
+      height: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      userSelect: 'none',
+      fontSize: '3rem',
+    }}
+  >
+    App
+  </div>
+);

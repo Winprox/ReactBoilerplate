@@ -1,5 +1,3 @@
-@import '../utils/theme.scss';
-
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -14,6 +12,6 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: $background;
-  color: $text;
+  background: #ffffff;
+  color: #231f20;
 }

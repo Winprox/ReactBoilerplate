@@ -1,4 +1,6 @@
-/dist
+dist
 node_modules
 package-lock.json
-.vscode
+yarn.lock
+src/assets/public/roads
+.DS_Store

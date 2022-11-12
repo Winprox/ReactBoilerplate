@@ -1,15 +1,16 @@
 #!/bin/bash
 clear
 git pull
+
 NEW_VER="$(date '+%-m').$(date '+%-d').$(date '+%-H')"
-OLD_VER=$(node -p "require('./package.json').version") 
-sed -i "2s/${OLD_VER}/${NEW_VER}/" package.json
+sed -i "" -e "2s/.*/\"version\": \"${NEW_VER}\",/" package.json
 
-rm -r node_modules
-rm -r package-lock.json
+# rm -r node_modules
+# rm -r package-lock.json
+# rm -r yarn.lock
 
-npm i --legacy-peer-deps
+# yarn i
 # sudo rsync -va patches/ node_modules/
 
 rm -r dist
-npm run build
+yarn b
