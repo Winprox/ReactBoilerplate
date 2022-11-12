@@ -1,2 +1,1 @@
-yarn i
-sudo rsync -va patches/ node_modules/
+yarn i && sudo rsync -va patches/ node_modules/
