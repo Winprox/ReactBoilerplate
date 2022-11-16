@@ -8,7 +8,7 @@ export type TSet<T> = (
   replace?: boolean
 ) => void;
 
-const create = <T>(
+export const create = <T>(
   config: StateCreator<T, [['zustand/subscribeWithSelector', never]], [], T>,
   ...listeners: [(state: T) => any, (state: any, prevState: any) => void][]
 ) => {
