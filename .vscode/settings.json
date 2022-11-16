@@ -20,6 +20,7 @@
     "pu.sh": true,
     "index.html": true,
     "tsconfig.json": true,
-    "vite.config.ts": true
+    "vite.config.ts": true,
+    "**/vite-env.d.ts": true
   }
 }
