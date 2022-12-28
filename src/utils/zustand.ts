@@ -25,7 +25,7 @@ export const proxy = <T, U>(
   for (const l of listeners)
     storeFrom.subscribe(l[0], (v) =>
       storeTo.setState((s) => {
-        const state = s as any;
+        const state = s as U & { proxy: { [key: string]: any } };
         const newState = { ...state, proxy: { ...state.proxy, [l[1]]: v } };
         return newState;
       })
