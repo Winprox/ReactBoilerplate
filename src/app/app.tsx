@@ -2,8 +2,6 @@ import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 import { createRoot } from 'react-dom/client';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
 import create, { proxy, TStore } from '../utils/zustand';
-import './normalize.css';
-import './app.scss';
 import styles from './app.module.scss';
 
 type TStoreState = { count: number; increase: () => void };
