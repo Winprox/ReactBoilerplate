@@ -18,10 +18,10 @@ export default create;
 
 type StoreSubscribeWithSelector<T> = {
   subscribe: {
-    (listener: (selectedState: T, previousSelectedState: T) => void): () => void;
+    (listener: (s: T, prev: T) => void): () => void;
     <U>(
-      selector: (state: T) => U,
-      listener: (selectedState: U, previousSelectedState: U) => void,
+      selector: (s: T) => U,
+      listener: (s: U, prev: U) => void,
       options?: { equalityFn?: (a: U, b: U) => boolean; fireImmediately?: boolean }
     ): () => void;
   };
