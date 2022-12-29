@@ -19,7 +19,6 @@ if ${REFRESH_MODULES}; then
   rm -r package-lock.json
   rm -r yarn.lock
   yarn i
-  sudo rsync -va patches/ node_modules/
 fi
 
 rm -r dist
