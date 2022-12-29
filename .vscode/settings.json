@@ -19,6 +19,7 @@
     "pu.sh": true,
     "index.html": true,
     "tsconfig.json": true,
+    "postcss.config.ts": true,
     "vite.config.ts": true,
     "**/vite-env.d.ts": true
   }
