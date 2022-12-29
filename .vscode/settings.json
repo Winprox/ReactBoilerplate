@@ -16,7 +16,6 @@
     "package-lock.json": true,
     "yarn.lock": true,
     "build.sh": true,
-    "patch.sh": true,
     "pu.sh": true,
     "index.html": true,
     "tsconfig.json": true,
