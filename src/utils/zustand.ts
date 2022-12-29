@@ -10,11 +10,7 @@ export const create: TCreate = (config, ...listeners) => {
 export const proxy: TProxy = (from, to, ...listeners) => {
   for (const l of listeners)
     from.subscribe(l[0], (v) =>
-      to.setState((s) => {
-        const state = s as any;
-        const newState = { ...state, proxy: { ...state.proxy, [l[1]]: v } };
-        return newState;
-      })
+      to.setState((s) => ({ ...s, proxy: { ...(s as any).proxy, [l[1]]: v } }))
     );
 };
 
@@ -31,12 +27,7 @@ type StoreSubscribeWithSelector<T> = {
   };
 };
 type Write<T, U> = Omit<T, keyof U> & U;
-type TStore<T> = UseBoundStore<Write<StoreApi<T>, StoreSubscribeWithSelector<T>>>;
-
-export type TSet<T> = (
-  partial: T | Partial<T> | ((state: T) => T | Partial<T>),
-  replace?: boolean
-) => void;
+export type TStore<T> = UseBoundStore<Write<StoreApi<T>, StoreSubscribeWithSelector<T>>>;
 
 type TCreate = <T>(
   config: StateCreator<T, [], []>,
