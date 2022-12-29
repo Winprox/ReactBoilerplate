@@ -14,7 +14,11 @@ const store: TStore<TStoreState> = create<TStoreState>((set) => ({
 
 type TStore2State = { proxy: { count: number } };
 const store2: TStore<TStore2State> = create<TStore2State>(
-  () => ({ proxy: { count: 0 } }),
+  () => ({
+    proxy: {
+      count: store.getState().count, //? default state
+    },
+  }),
   [(s) => s.proxy.count, (c) => console.log(c)]
 );
 proxy(store, store2, [(s) => s.count, 'count']);
