@@ -16,7 +16,7 @@
     ".prettierrc.json": true,
     "tsconfig.json": true,
     "postcss.config.js": true,
-    "vite.config.ts": true,
+    "vite.config.js": true,
     "**/vite-env.d.ts": true
   }
 }
