@@ -26,7 +26,7 @@ const App = () => {
   const { count, increase } = store();
   return (
     <Div100vh
-      className='flex select-none items-center justify-center bg-gray-800  text-4xl text-gray-50'
+      className='flex select-none items-center justify-center bg-gray-800 text-4xl text-gray-50'
       onClick={increase}
     >
       {`Clicked ${count} times`}
