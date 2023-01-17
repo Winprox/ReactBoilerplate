@@ -3,6 +3,7 @@ import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 import { createRoot } from 'react-dom/client';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
 import { create, proxy, TStore } from '../utils/zustand';
+import styles from './app.module.scss';
 import './app.css';
 
 type TStoreState = { count: number; increase: () => void };
@@ -26,7 +27,7 @@ const App = () => {
   const { count, increase } = store();
   return (
     <Div100vh
-      className='flex select-none items-center justify-center bg-gray-800 text-4xl text-gray-50'
+      className={`flex select-none items-center justify-center bg-gray-800 text-4xl ${styles.wrapper}`}
       onClick={increase}
     >
       {`Clicked ${count} times`}
