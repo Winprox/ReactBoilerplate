@@ -1,4 +1,4 @@
-import zCreate, { StateCreator, StoreApi, UseBoundStore } from 'zustand';
+import { create as zCreate, StateCreator, StoreApi, UseBoundStore } from 'zustand';
 import { subscribeWithSelector } from 'zustand/middleware';
 
 export const create: TCreate = (config, ...listeners) => {

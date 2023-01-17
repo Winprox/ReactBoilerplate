@@ -1,15 +1,9 @@
 {
+  "editor.quickSuggestions": { "strings": true },
+  "tailwindCSS.experimental.configFile": "./tailwind.config.cjs",
+  "files.associations": { "*.css": "tailwindcss" },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true,
-  "prettier.printWidth": 95,
-
-  "eslint.alwaysShowStatus": true,
-  "eslint.lintTask.enable": true,
-  "eslint.packageManager": "yarn",
-
   "files.exclude": {
-    ".eslintrc.json": true,
     ".gitignore": true,
     ".vscode": true,
     "node_modules": true,
@@ -18,6 +12,8 @@
     "build.sh": true,
     "pu.sh": true,
     "index.html": true,
+    ".eslintrc.json": true,
+    ".prettierrc.json": true,
     "tsconfig.json": true,
     "postcss.config.js": true,
     "vite.config.ts": true,
