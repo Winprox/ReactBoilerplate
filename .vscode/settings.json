@@ -3,20 +3,10 @@
   "tailwindCSS.experimental.configFile": "./tailwind.config.cjs",
   "files.associations": { "*.css": "tailwindcss" },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.exclude": {
-    ".gitignore": true,
-    ".vscode": true,
-    "node_modules": true,
-    "package-lock.json": true,
-    "yarn.lock": true,
-    "build.sh": true,
-    "pu.sh": true,
-    "index.html": true,
-    ".eslintrc.json": true,
-    ".prettierrc.json": true,
-    "tsconfig.json": true,
-    "postcss.config.js": true,
-    "vite.config.js": true,
-    "**/vite-env.d.ts": true
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true,
+    "source.sortMembers": true
   }
 }

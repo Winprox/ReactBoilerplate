@@ -1,10 +1,10 @@
-import Div100vh from 'react-div-100vh';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+import Div100vh from 'react-div-100vh';
 import { createRoot } from 'react-dom/client';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
-import { create, proxy, TStore } from '../utils/zustand';
-import styles from './app.module.scss';
+import { create, proxy, TStore } from 'utils/zustand';
 import './app.css';
+import styles from './app.module.scss';
 
 type TStoreState = { count: number; increase: () => void };
 const store: TStore<TStoreState> = create<TStoreState>((set) => ({

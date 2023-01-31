@@ -1,6 +1,8 @@
 {
-  "include": ["src", "vite.config.js"],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["src", "vite.config.js", "vite-env.d.ts"],
   "compilerOptions": {
+    "baseUrl": "src",
     "outDir": "dist",
     "jsx": "react-jsx",
     "target": "ESNext",

@@ -3,6 +3,6 @@
     "aaron-bond.better-comments",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "tailwindlabs.tailwindcss"
+    "bradlc.vscode-tailwindcss"
   ]
 }
