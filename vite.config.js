@@ -6,5 +6,5 @@ export default defineConfig({
   build: { outDir: 'dist', assetsDir: '', chunkSizeWarningLimit: 2048 },
   publicDir: './src/assets/public',
   plugins: [paths(), react()],
-  server: { host: true },
+  server: { host: true, open: true },
 });
