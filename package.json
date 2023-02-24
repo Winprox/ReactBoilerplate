@@ -1,14 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/package",
-  "version": "12.29.9",
+  "private": true,
+  "version": "2.25.0",
   "type": "module",
   "scripts": {
     "push": "git add . && git commit -m \"$(date '+%-m').$(date '+%-d').$(date '+%-H')\" && git push",
     "clean": "rm -rf node_modules && rm -f package-lock.json && rm -f yarn.lock",
-    "update": "npx npm-check-updates -u",
-    "dev": "npx vite",
-    "build": "npx vite build",
-    "preview": "npx vite preview"
+    "update": "yarn npm-check-updates -u",
+    "dev": "yarn vite",
+    "build": "sed -i \"\" -e \"4s/.*/\\\"version\\\": \\\"$(date '+%-m').$(date '+%-d').$(date '+%-H')\\\",/\" package.json && rm -rf dist && npx vite build && npm run format",
+    "preview": "yarn vite preview",
+    "format": "yarn prettier --loglevel silent --write \"**/*.{ts,tsx,json,scss}\""
   },
   "dependencies": {
     "@fvilers/disable-react-devtools": "^1.3.0",
