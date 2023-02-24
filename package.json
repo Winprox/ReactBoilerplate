@@ -3,6 +3,7 @@
   "version": "12.29.9",
   "type": "module",
   "scripts": {
+    "push": "git add . && git commit -m \"$(date '+%-m').$(date '+%-d').$(date '+%-H')\" && git push",
     "clean": "rm -rf node_modules && rm -f package-lock.json && rm -f yarn.lock",
     "update": "npx npm-check-updates -u",
     "dev": "npx vite",
