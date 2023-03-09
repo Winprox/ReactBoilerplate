@@ -4,7 +4,6 @@ import { createRoot } from 'react-dom/client';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
 import { create, proxy, TStore } from 'utils/zustand';
 import './app.css';
-import styles from './app.module.scss';
 
 type TStoreState = { count: number; increase: () => void };
 const store: TStore<TStoreState> = create<TStoreState>((set) => ({
@@ -26,11 +25,11 @@ proxy(store, store2, [(s) => s.count, 'count']);
 const App = () => {
   const { count, increase } = store();
   return (
-    <Div100vh
-      className={`flex select-none items-center justify-center bg-gray-800 text-4xl ${styles.wrapper}`}
-      onClick={increase}
-    >
-      {`Clicked ${count} times`}
+    <Div100vh className={'flex select-none flex-col items-center justify-center bg-gray-800'}>
+      <button
+        className='btn-primary btn'
+        onClick={increase}
+      >{`Clicked ${count} times`}</button>
     </Div100vh>
   );
 };

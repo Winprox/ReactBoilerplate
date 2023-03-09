@@ -16,7 +16,10 @@ export const proxy: TProxy = (from, to, ...listeners) => {
 
 export default create;
 
-type StoreSubscribeWithSelector<T> = {
+export type TStore<T> = UseBoundStore<TWrite<StoreApi<T>, TStoreSubscribe<T>>>;
+
+type TWrite<T, U> = Omit<T, keyof U> & U;
+type TStoreSubscribe<T> = {
   subscribe: {
     (listener: (s: T, prev: T) => void): () => void;
     <U>(
@@ -26,8 +29,6 @@ type StoreSubscribeWithSelector<T> = {
     ): () => void;
   };
 };
-type Write<T, U> = Omit<T, keyof U> & U;
-export type TStore<T> = UseBoundStore<Write<StoreApi<T>, StoreSubscribeWithSelector<T>>>;
 
 type TCreate = <T>(
   config: StateCreator<T, [], []>,
