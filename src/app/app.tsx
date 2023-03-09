@@ -2,6 +2,7 @@ import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 import Div100vh from 'react-div-100vh';
 import { createRoot } from 'react-dom/client';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
+import { Consts } from 'utils/consts';
 import { create, proxy, TStore } from 'utils/zustand';
 import './app.css';
 
@@ -25,16 +26,21 @@ proxy(store, store2, [(s) => s.count, 'count']);
 const App = () => {
   const { count, increase } = store();
   return (
-    <Div100vh className={'flex select-none flex-col items-center justify-center bg-gray-800'}>
+    <Div100vh
+      className={'relative flex select-none flex-col items-center justify-center bg-gray-800'}
+    >
       <button
         className='btn-primary btn'
         onClick={increase}
       >{`Clicked ${count} times`}</button>
+      <div className='alert alert-info absolute top-0 left-0 m-5 w-auto shadow-lg'>
+        {`${Consts.isModeDev ? 'Development' : 'Production'} Build`}
+      </div>
     </Div100vh>
   );
 };
 
-if (process.env.NODE_ENV !== 'development') disableReactDevTools();
+if (Consts.isEnvDev) disableReactDevTools();
 else mountStoreDevtool('Store', store);
 
 createRoot(document.getElementById('app')!).render(<App />);

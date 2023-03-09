@@ -8,6 +8,7 @@
     "dev": "pnpm vite --host --open",
     "upd": "pnpm npm-check-updates -u",
     "build": "pnpm ts-node-esm build.ts",
+    "build:p": "pnpm ts-node-esm build.ts -p",
     "preview": "pnpm vite preview --host --open"
   },
   "dependencies": {

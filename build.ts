@@ -21,9 +21,10 @@ const changeLine = (file: string, search: string, text: string) =>
     })
   );
 
-const setupEnv = async (ver: string) => {
+const setupEnv = async (type: string, ver: string) => {
   try {
     await changeLine('package.json', 'version', `"version": "${ver}",`);
+    await changeLine('.env', 'VITE_DEV', `VITE_DEV = ${type === 'dev'}`);
   } catch (e) {
     console.error(e);
     process.exit();
@@ -33,18 +34,16 @@ const setupEnv = async (ver: string) => {
 const now = new Date();
 const ver = `${now.getMonth() + 1}.${now.getDate()}.${now.getHours()}`;
 const win = process.platform === 'win32';
-
-const arg = process.argv.at(-1);
-if (arg) console.log(`Recieved argument: ${arg}`);
+const type = process.argv.at(-1) === '-p' ? 'prod' : 'dev';
 
 execSync(`${win ? 'if exist dist rd /s/q' : 'rm -rf'} dist`);
 
 process.stdout.write(`${ver} `);
 setInterval(() => process.stdout.write('.'), 500);
 
-await setupEnv(ver);
+await setupEnv(type, ver);
 exec('pnpm vite build', async (e) => {
-  await setupEnv('0.0.0');
+  await setupEnv('dev', '0.0.0');
   if (e) {
     console.error(` Build error: ${e}`);
     process.exit();
