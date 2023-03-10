@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "push": "git add . && git commit -m \"$(date '+%-m').$(date '+%-d').$(date '+%-H')\" && git push",
+    "git": "git add . && git commit -m \"$(date '+%-m').$(date '+%-d').$(date '+%-H')\"",
     "upd": "pnpm npm-check-updates -u",
     "dev": "pnpm vite --host --open",
     "build": "pnpm ts-node-esm build.ts",
