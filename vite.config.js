@@ -3,8 +3,12 @@ import { defineConfig } from 'vite';
 import paths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  build: { outDir: 'dist', assetsDir: '', chunkSizeWarningLimit: 2048 },
-  publicDir: './src/assets/public',
+  build: {
+    outDir: 'dist',
+    assetsDir: '',
+    minify: 'terser',
+    terserOptions: { format: { comments: false } },
+    chunkSizeWarningLimit: 2048,
+  },
   plugins: [paths(), react()],
-  server: { host: true, open: true },
 });
