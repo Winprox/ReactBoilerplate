@@ -1,12 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/package",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "git": "git add . && git commit -m \"$(date '+%-m').$(date '+%-d').$(date '+%-H')\"",
-    "upd": "pnpm npm-check-updates -u",
-    "dev": "pnpm vite --host --open",
+    "upd": "pnpm ncu -u",
+    "dev": "pnpm vite --host",
     "build": "pnpm ts-node-esm build.ts",
     "build:p": "pnpm ts-node-esm build.ts -p",
     "preview": "pnpm vite preview --host --open"

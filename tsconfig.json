@@ -1,24 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "include": ["src", "vite.config.js", "vite-env.d.ts"],
   "compilerOptions": {
     "baseUrl": "src",
-    "outDir": "dist",
     "jsx": "react-jsx",
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "esModuleInterop": false,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "strict": true,
-    "skipLibCheck": true,
     "sourceMap": true,
-    "noEmit": true,
-    "allowJs": true,
-    "useDefineForClassFields": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"]
   }
 }

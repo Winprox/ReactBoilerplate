@@ -36,12 +36,11 @@ const ver = `${now.getMonth() + 1}.${now.getDate()}.${now.getHours()}`;
 const type = process.argv.at(-1) === '-p' ? 'prod' : 'dev';
 const win = process.platform === 'win32';
 
-execSync(`${win ? 'if exist dist rd /s/q' : 'rm -rf'} dist`);
-
 process.stdout.write(`${ver} `);
 setInterval(() => process.stdout.write('.'), 500);
 
 await setupEnv(type, ver);
+execSync(`${win ? 'if exist dist rd /s/q' : 'rm -rf'} dist`);
 exec('pnpm vite build', async (e) => {
   await setupEnv('dev', '0.0.0');
   if (e) {

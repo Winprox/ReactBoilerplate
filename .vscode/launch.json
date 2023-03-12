@@ -2,11 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "chrome",
+      "name": "Client",
+      "type": "node",
       "request": "launch",
-      "name": "Run",
-      "url": "http://localhost:5173/",
-      "webRoot": "${workspaceFolder}/src"
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev"],
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "internalConsoleOptions": "openOnSessionStart",
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "pattern": "http://localhost:([0-9]+)",
+        "killOnServerStop": true
+      }
     }
   ]
 }
