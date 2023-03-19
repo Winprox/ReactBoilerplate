@@ -5,7 +5,7 @@ import paths from 'vite-tsconfig-paths';
 export default defineConfig({
   build: {
     outDir: 'dist',
-    assetsDir: '',
+    assetsDir: './',
     minify: 'terser',
     terserOptions: { format: { comments: false } },
     chunkSizeWarningLimit: 2048,
