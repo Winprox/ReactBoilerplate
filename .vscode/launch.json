@@ -12,6 +12,7 @@
       "internalConsoleOptions": "openOnSessionStart",
       "serverReadyAction": {
         "action": "debugWithChrome",
+        "webRoot": "${workspaceFolder}",
         "pattern": "http://localhost:([0-9]+)",
         "killOnServerStop": true
       }
