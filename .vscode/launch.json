@@ -20,7 +20,8 @@
       "postDebugTask": "kill",
       "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
       "webRoot": "${workspaceFolder}",
-      "pathMappings": [{ "url": "http://localhost:5173/src", "path": "${webRoot}/src" }]
+      "pathMappings": [{ "url": "http://localhost:5173/src", "path": "${webRoot}/src" }],
+      "profile": "default-release"
     }
   ]
 }
