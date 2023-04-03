@@ -34,7 +34,7 @@ const App = () => {
         className='btn-primary btn'
         onClick={increase}
       >{`Clicked ${count} times`}</button>
-      <div className='alert alert-info absolute top-0 left-0 m-5 flex w-auto flex-col gap-0 shadow-lg'>
+      <div className='alert alert-info absolute left-0 top-0 m-5 flex w-auto flex-col gap-0 shadow-lg'>
         <p>{`Version ${Consts.version}`}</p>
         <p>{`${Consts.isModeDev ? 'Development' : 'Production'} Build`}</p>
       </div>
