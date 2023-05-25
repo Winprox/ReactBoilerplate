@@ -3,7 +3,6 @@
     "aaron-bond.better-comments",
     "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "firefox-devtools.vscode-firefox-debug"
+    "esbenp.prettier-vscode"
   ]
 }

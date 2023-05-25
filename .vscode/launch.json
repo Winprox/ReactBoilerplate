@@ -2,26 +2,17 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Chrome",
-      "type": "chrome",
+      "name": "App",
+      "type": "node",
       "request": "launch",
-      "url": "http://localhost:5173/",
-      "preLaunchTask": "serve",
-      "postDebugTask": "kill",
-      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "Firefox",
-      "type": "firefox",
-      "request": "launch",
-      "preLaunchTask": "serve",
-      "postDebugTask": "kill",
-      "url": "http://localhost:5173/",
-      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
-      "webRoot": "${workspaceFolder}",
-      "pathMappings": [{ "url": "http://localhost:5173/src", "path": "${webRoot}/src" }],
-      "profile": "default-release"
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev"],
+      "serverReadyAction": {
+        "killOnServerStop": true,
+        "action": "debugWithChrome",
+        "pattern": "http://localhost:([0-9]+)",
+        "uriFormat": "http://localhost:%s"
+      }
     }
   ]
 }
