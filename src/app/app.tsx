@@ -27,14 +27,14 @@ const App = () => {
   return (
     <div
       className={
-        'root relative flex select-none flex-col items-center justify-center bg-gray-800'
+        'root relative flex select-none flex-col items-center justify-center bg-white'
       }
     >
       <button
-        className='btn-primary btn'
+        className='rounded-md bg-blue-600 px-3 py-2 text-white shadow-md transition-all hover:scale-105 active:scale-95'
         onClick={increase}
       >{`Clicked ${count} times`}</button>
-      <div className='alert alert-info absolute left-0 top-0 m-5 flex w-auto flex-col gap-0 shadow-lg'>
+      <div className='absolute left-0 top-0 m-5 flex w-auto flex-col gap-0 rounded-md bg-blue-600 px-3 py-2 leading-5 text-white shadow-md'>
         <p>{`Version ${Consts.version}`}</p>
         <p>{`${Consts.isModeDev ? 'Development' : 'Production'} Build`}</p>
       </div>
@@ -45,4 +45,4 @@ const App = () => {
 if (Consts.isEnvDev) disableReactDevTools();
 else mountStoreDevtool('Store', store);
 
-createRoot(document.getElementById('app')!).render(<App />);
+createRoot(document.querySelector('#app')!).render(<App />);
