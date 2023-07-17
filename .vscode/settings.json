@@ -1,8 +1,4 @@
 {
-  "files.exclude": {
-    "**/.swc": true
-  },
-
   "editor.quickSuggestions": { "strings": true },
   "files.associations": { "*.css": "tailwindcss" },
   "tailwindCSS.experimental.configFile": "./tailwind.config.cjs",
@@ -15,7 +11,6 @@
   ],
 
   "eslint.lintTask.enable": true,
-  "eslint.packageManager": "pnpm",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
   "editor.codeActionsOnSave": {
