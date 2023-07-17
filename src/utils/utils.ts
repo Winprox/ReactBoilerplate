@@ -3,11 +3,11 @@ import { twMerge } from 'tailwind-merge';
 import { StateCreator, StoreApi, UseBoundStore, create as zustandCreate } from 'zustand';
 import { subscribeWithSelector } from 'zustand/middleware';
 
-//? === Tailwind ===
+//? === Tailwind Helper ===
 
 export const cm = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
-//? === Zustand ===
+//? === Zustand Helpers ===
 
 export const create: TCreate = (config, ...listeners) => {
   const store = zustandCreate(subscribeWithSelector(config));
@@ -16,31 +16,29 @@ export const create: TCreate = (config, ...listeners) => {
 };
 
 export const proxy: TProxy = (from, to, ...listeners) => {
-  const keys = Object.keys(to.getState() as Record<string, unknown>);
+  const keys = Object.keys(to.getState() as TRecord);
   for (const l of listeners) {
     const path = l[1]
       .toString()
       .split('.')
       .reverse()
       .map((v) => v.replace(/[\n;} ]/g, ''));
-    const start = path.findLastIndex((v) => keys.includes(v)) + 1;
+    const start = path.findLastIndex((v) => keys.includes(v));
     from.subscribe(l[0], (v) =>
-      to.setState((s) => ({ ...setObjValAtPath(s as typeof v, path.slice(0, start), v) }))
+      to.setState((s) => ({ ...setObjValAtPath(s as typeof v, path.slice(0, start + 1), v) }))
     );
   }
 };
 
-export const setObjValAtPath = <Obj extends Record<string, unknown>>(
+export const setObjValAtPath = <Obj extends TRecord>(
   obj: Obj,
   path: string[],
   val: unknown
 ): Obj => {
-  const last = path.pop();
-  if (!last) return obj;
+  const key = path.pop();
+  if (!key) return obj;
   return Object.assign(obj, {
-    [last]: path.length
-      ? setObjValAtPath(obj[last] as Record<string, unknown>, path, val)
-      : val
+    [key]: path.length ? setObjValAtPath(obj[key] as TRecord, path, val) : val
   });
 };
 
@@ -66,3 +64,5 @@ type TProxy = <T, U>(
   to: TStore<U>,
   ...listeners: [(fromState: T) => any, (toState: U) => any][]
 ) => void;
+
+type TRecord = Record<string, unknown>;
