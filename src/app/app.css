@@ -9,8 +9,3 @@
   font-display: swap;
   src: url('./roboto.ttf') format('truetype');
 }
-
-.root {
-  height: 100vh;
-  height: 100svh;
-}

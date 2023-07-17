@@ -22,8 +22,9 @@ const App = () => {
   const { count, increase } = store();
   return (
     <div
+      style={{ height: '100svh' }}
       className={cm(
-        'root relative select-none bg-white',
+        'relative h-full select-none bg-white',
         'flex flex-col items-center justify-center'
       )}
     >
