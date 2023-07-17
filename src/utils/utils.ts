@@ -37,7 +37,11 @@ export const setObjValAtPath = <Obj extends Record<string, unknown>>(
 ): Obj => {
   const last = path.pop();
   if (!last) return obj;
-  return Object.assign(obj, { [last]: path.length ? setObjValAtPath(obj, path, val) : val });
+  return Object.assign(obj, {
+    [last]: path.length
+      ? setObjValAtPath(obj[last] as Record<string, unknown>, path, val)
+      : val
+  });
 };
 
 export type TStore<T> = UseBoundStore<Omit<StoreApi<T>, keyof TStoreSub<T>> & TStoreSub<T>>;
