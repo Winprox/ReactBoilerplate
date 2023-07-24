@@ -3,6 +3,9 @@ import { twMerge } from 'tailwind-merge';
 import { StateCreator, StoreApi, UseBoundStore, create as zustandCreate } from 'zustand';
 import { subscribeWithSelector } from 'zustand/middleware';
 
+export const isFunction = (value: unknown): value is (...args: any) => any =>
+  typeof value === 'function';
+
 //? === Tailwind Helper ===
 
 export const cm = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
