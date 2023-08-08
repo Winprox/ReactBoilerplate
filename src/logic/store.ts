@@ -1,9 +1,12 @@
+import axios from 'axios';
 import { TStore, create, proxy } from '../utils';
 
-type TStoreState = { count: number; increase: () => void };
+type TStoreState = { count: number; increase: () => void; data: string; fetch: () => void };
 export const store: TStore<TStoreState> = create<TStoreState>((set) => ({
   count: 0,
-  increase: () => set((s) => ({ count: s.count + 1 }))
+  increase: () => set((s) => ({ count: s.count + 1 })),
+  data: '',
+  fetch: async () => set({ data: await axios({ url: '/example-api' }) })
 }));
 
 type TStore2State = { proxy: { count: number } };

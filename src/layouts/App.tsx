@@ -1,8 +1,14 @@
+import { useEffect } from 'react';
 import { store } from '../logic/store';
 import { Consts, cm } from '../utils';
 
 export const App = () => {
-  const { count, increase } = store();
+  const { count, increase, data, fetch } = store();
+
+  useEffect(() => {
+    fetch();
+  }, [fetch]);
+
   return (
     <div
       style={{ height: '100svh' }}
@@ -18,6 +24,7 @@ export const App = () => {
         )}
         onClick={increase}
       >{`Clicked ${count} times`}</button>
+      <h1>{data}</h1>
       <div
         className={cm(
           'absolute left-0 top-0 m-5 flex w-auto flex-col gap-0 px-3 py-2',
