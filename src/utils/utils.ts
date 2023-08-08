@@ -12,8 +12,12 @@ export const cm = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
 //? === Zustand Helpers ===
 
+export const storeReset = new Set<() => void>();
+
 export const create: TCreate = (config, ...listeners) => {
   const store = zustandCreate(subscribeWithSelector(config));
+  const initState = store.getState();
+  storeReset.add(() => store.setState(initState, true));
   for (const l of listeners) store.subscribe(l[0], l[1]);
   return store;
 };
