@@ -8,7 +8,7 @@ export default defineConfig({
     terserOptions: { format: { comments: false } }
   },
   test: {
-    environment: 'jsdom',
+    environment: 'happy-dom',
     setupFiles: './src/app/test.ts',
     testMatch: './**/*.test.tsx'
   }
