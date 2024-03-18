@@ -1,34 +1,19 @@
 {
-  "$schema": "http://json.schemastore.org/eslintrc",
-  "env": { "browser": true, "node": true },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": { "jsx": true },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": ["@typescript-eslint", "react", "react-hooks"],
-  "settings": { "react": { "version": "detect" } },
-  "rules": {
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "prefer-template": "error",
-    "no-duplicate-imports": "error",
-    "react/prop-types": "off",
-    "react/display-name": "off",
-    "react/react-in-jsx-scope": "off",
-    "no-unused-vars": "off",
-    "no-unused-labels": "warn",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-non-null-assertion": "off"
-  }
+    "ignorePatterns": ["public/**"],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "react", "react-hooks"],
+    "env": { "browser": true, "node": true },
+    "settings": { "react": { "version": "detect" } },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended"
+    ],
+    "rules": {
+        "react/prop-types": "off",
+        "react/display-name": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+    }
 }

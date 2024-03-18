@@ -1,21 +1,11 @@
 {
-  "editor.quickSuggestions": { "strings": true },
-  "files.associations": { "*.css": "tailwindcss" },
-  "tailwindCSS.experimental.configFile": "./tailwind.config.cjs",
-  "tailwindCSS.experimental.classRegex": [
-    ["cx\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cm\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["className\\: '([^']*)'"],
-    ["class\\: '([^']*)'"]
-  ],
-
-  "eslint.lintTask.enable": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.sortMembers": true,
-    "source.organizeImports": true
-  }
+    "editor.rulers": [120],
+    "editor.renderWhitespace": "boundary",
+    "search.exclude": { "package-lock.json": true },
+    "tailwindCSS.experimental.configFile": "./tailwind.config.js",
+    "tailwindCSS.experimental.classRegex": [
+        ":\\s*?[\"'`]([^\"'`]*).*?,",
+        ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+        ["cm\\(([^\\);]*)[\\);]", "[`'\"`]([^'\"`,;]*)[`'\"`]"]
+    ]
 }

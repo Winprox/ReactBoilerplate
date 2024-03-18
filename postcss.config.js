@@ -1,2 +1,2 @@
-import config from './tailwind.config.cjs';
+import config from './tailwind.config.js';
 export default { plugins: { tailwindcss: { config }, autoprefixer: {}, cssnano: {} } };
