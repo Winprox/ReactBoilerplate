@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { cm } from '@/shared/utils';
 import { store } from '../model/pageStore';
 
-export const Page = () => {
+export const Page: FC = () => {
     const { count, increase, data, fetch } = store();
 
     useEffect(() => {
@@ -12,7 +12,7 @@ export const Page = () => {
     return (
         <div
             style={{ height: '100svh' }}
-            className='font-body relative flex select-none flex-col items-center justify-center bg-slate-200'
+            className='relative flex select-none flex-col items-center justify-center bg-slate-200 font-body'
         >
             <button
                 className={cm(

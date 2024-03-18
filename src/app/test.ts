@@ -5,6 +5,7 @@ import { storeReset } from '@/shared/utils';
 
 vi.mock('axios');
 expect.extend(matchers);
+
 afterEach(() => {
     storeReset.forEach((fn) => fn());
     cleanup();
