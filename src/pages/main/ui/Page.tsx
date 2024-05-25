@@ -21,7 +21,7 @@ export const Page: FC = () => {
                 )}
                 onClick={increase}
             >{`Clicked ${count} times`}</button>
-            <h1>{data}</h1>
+            <h1 className='p-2 max-w-96'>{data}</h1>
             <div
                 className={cm(
                     'absolute left-0 top-0 m-5 w-auto px-2 py-1',
