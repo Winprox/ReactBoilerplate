@@ -1,16 +1,11 @@
 {
     "compilerOptions": {
-        "paths": { "@/*": ["./src/*"] },
         "jsx": "react-jsx",
         "target": "ESNext",
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "strict": true,
         "skipLibCheck": true,
-        "inlineSourceMap": true,
-        "resolveJsonModule": true,
-        "allowSyntheticDefaultImports": true,
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "types": ["vitest-dom/extend-expect"]
+        "lib": ["DOM", "DOM.Iterable", "ESNext"]
     }
 }
