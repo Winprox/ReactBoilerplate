@@ -7,8 +7,11 @@
         "preview": "vite preview --open"
     },
     "dependencies": {
-        "@ant-design/icons": "^6.0.0",
-        "antd": "^5.26.7",
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
+        "@fontsource/roboto": "^5.2.6",
+        "@mui/icons-material": "^7.3.0",
+        "@mui/material": "^7.3.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },

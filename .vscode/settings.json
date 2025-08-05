@@ -1,5 +1,8 @@
 {
     "editor.rulers": [100],
     "search.exclude": { "package-lock.json": true },
-    "tailwindCSS.experimental.classRegex": ["cm\\('([^']*)'\\)"]
+    "tailwindCSS.experimental.classRegex": [
+        "cm\\('([^']*)'\\)",
+        "className\\s*:\\s*['\"]([^'\"]*)['\"]"
+    ]
 }
